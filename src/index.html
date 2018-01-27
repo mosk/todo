@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Очень важные дела</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 </head>
 
 <body>
-  <header class="header">T</header>
-  <main>
-    <div id="app-1">
-      <p>{{ message }}</p>
-      <button v-on:click="reverseMessage">Обратить порядок букв в сообщении</button>
-    </div>
-  </main>
-  <footer>B</footer>
-  <script src="js/script.js"></script>
+    <header class="header">
+        <h1 class="header__title">Очень важные дела</h1>
+    </header>
+    <main id="app" class="todo">
+        <input v-on:change="addTask" type="text" class="todo__input" placeholder="Что мне надо сделать?" v-bind:value="todoInputValue">
+        <ul class="todo__list">
+            <template>
+                <li v-for="todo in todoList">
+                    {{ todo }}
+                </li>
+            </template>
+        </ul>
+    </main>
+    <footer></footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
