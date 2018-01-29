@@ -12,6 +12,18 @@
         font-size: inherit;
         line-height: inherit;
         border: none;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        &::placeholder {
+        	font-style: italic;
+        	opacity: 0.6;
+        }
+    }
+    &__list {
+    	margin: 0;
+    	padding: 0;
+    	list-style-type: none;
+    }
+    &__item {
+    	padding: @fontNormal @fontSmall;
+    	border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 }
